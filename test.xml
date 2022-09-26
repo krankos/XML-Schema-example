@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliography xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+
+    <book>
+        <title>Le Seigneur des Anneaux</title>
+        <author>J.R.R. Tolkien</author>
+        <tomes>
+            <tome>
+                <pages>1000</pages>
+            </tome>
+            <tome>
+                <pages>1000</pages>
+            </tome>
+            <tome>
+                <pages>1000</pages>
+            </tome>
+        </tomes>
+        <infosEdition>
+            <editor>Delcourt</editor>
+            <location>Paris</location>
+            <print>2000</print>
+            <isbn>978-2-7560-1079-8</isbn>
+        </infosEdition>
+        <opinion>Un chef d'oeuvre</opinion>
+    </book>
+
+    <article>
+        <title>Le Seigneur des Anneaux</title>
+        <author>J.R.R. Tolkien</author>
+        <infosPublication>
+            <journal>Le Monde</journal>
+            <pages>1-10</pages>
+            <year>1980</year>
+            <number>555</number>
+        </infosPublication>
+        <opinion>Un chef d'oeuvre</opinion>
+    </article>
+
+</bibliography>

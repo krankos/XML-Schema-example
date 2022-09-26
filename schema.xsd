@@ -1,0 +1,79 @@
+<!-- xml schema -->
+
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Global elements -->
+    <xsd:element name="title" type="xsd:string"/>
+    <xsd:element name="author" type="xsd:string"/>
+    <xsd:element
+    name="opinion" type="xsd:string"/>
+
+
+    <!-- bookType definition -->
+    <xsd:complexType name="bookType">
+        <xsd:sequence>
+            <xsd:element ref="title"/>
+            <xsd:element ref="author" maxOccurs="unbounded"/>
+            <xsd:element name="tomes" type="tomesType"/>
+            <xsd:element name="infosEdition" type="editionType"/>
+            <xsd:element ref="opinion" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- tomesType definition -->
+    <xsd:complexType name="tomesType">
+        <xsd:sequence>
+            <xsd:element name="tome" type="tomeType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- tomeType definition -->
+    <xsd:complexType name="tomeType">
+        <xsd:sequence>
+            <xsd:element name="pages" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- editionType definition -->
+    <xsd:complexType name="editionType">
+        <xsd:sequence>
+            <xsd:element name="editor" type="xsd:string"/>
+            <xsd:element name="location" type="xsd:string"/>
+            <xsd:element name="print" type="xsd:string"/>
+            <xsd:element name="isbn" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- articleType definition -->
+    <xsd:complexType name="articleType">
+        <xsd:sequence>
+            <xsd:element ref="title"/>
+            <xsd:element ref="author" maxOccurs="unbounded"/>
+            <xsd:element name="infosPublication" type="publicationType"/>
+            <xsd:element ref="opinion" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- publicationType definition -->
+    <xsd:complexType name="publicationType">
+        <xsd:sequence>
+            <xsd:element name="journal" type="xsd:string"/>
+            <xsd:element name="pages" type="xsd:string"/>
+            <xsd:element name="year" type="xsd:string"/>
+            <xsd:element name="number" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- bibiliography element -->
+    <xsd:element name="bibliography">
+        <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                <xsd:element
+                name="book" type="bookType"/>
+                <!-- <xsd:element ref="book"></xsd:element> book is a global element -->
+
+                <xsd:element name="article" type="articleType"/>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
